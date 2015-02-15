@@ -8,4 +8,7 @@ Description: This package contains functions that enhance the L1 regularised pie
 Depends: R (>= 3.1.2)
 License:GPL-3
 LazyData: true
+Imports: 
+    l1tf,
+    zoo
 

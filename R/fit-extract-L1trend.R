@@ -90,9 +90,9 @@ l1extract <- function(y.v,prop,sens=100,max.length=5){
 
   for(i in 1:(dim(breaks.comb)[1]-1)){
     cp.grp.tmp <- cp.m[cp.m[,1] >= (breaks.comb)[i,1]&(cp.m[,1] < breaks.comb[i,2]),,drop=FALSE]
-    cp2.v[i] <- cp.grp.tmp[which(cp.grp.tmp[,3]==max(cp.grp.tmp[,3])),2]
+    cp2.v[i] <- cp.grp.tmp[which(abs(cp.grp.tmp[,3])==max(abs(cp.grp.tmp[,3]))),2]-2
   }
-
+  
   cuts.v <- c(0,cp2.v,length(diff2.v))
   start.v <- cuts.v[-length(cuts.v)]+1
   end.v <- cuts.v[-1]
@@ -100,7 +100,7 @@ l1extract <- function(y.v,prop,sens=100,max.length=5){
   centers.v <- round((cuts.v[-1]-cuts.v[-length(cuts.v)])/2)+cuts.v[-length(cuts.v)]
 
   summary.df <- data.frame(start.v,end.v,dat.m[centers.v,2],(end.v-start.v+1))
-
+  
   names(summary.df) <- c("start","end","grad","length")
 
   summary.df$segment <- rev(1:dim(summary.df)[1])
@@ -131,9 +131,9 @@ l1extract <- function(y.v,prop,sens=100,max.length=5){
 }
 
 
-test.l1 <- L1ExtractFn(y.v = data.1.df[,3], prop = 0.1)
+test.l1 <- l1extract(y.v = data.1.df[,3], prop = 0.05)
 
-
+ggplot(test.l1)
 
 
 
