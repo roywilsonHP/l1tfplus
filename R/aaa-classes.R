@@ -4,10 +4,9 @@
 #'@slot series.df A numeric dataframe
 #'@slot prop.na A length-one numeric vector
 #'
-#'@exportClass
-
+#'@export
 setClass("l1tf_obj",
-         slots = list(summary.df = "data.frame",
-                      series.df = "data.frame",
-                      prop.na = "numeric"))
+        slots = list(summary.df = "data.frame",
+                    series.df = "data.frame",
+                    prop.na = "numeric"))
 

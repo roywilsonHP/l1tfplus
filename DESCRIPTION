@@ -1,14 +1,17 @@
 Package: l1tfFns
-Title: Fits piecewise polynomial trend based on L1 regularisation and extracts features
+Title: Fits piecewise polynomial trend based on L1 regularisation and extracts
+    features
 Version: 0.1
 Authors@R: person("Roy","Wilson",email="roy.wilson@hp.com",role=c("aut","cre"))
-Description: This package contains functions that enhance the L1 regularised piecewise linear trend
-  package l1tf.  The main function fits the model on a given vector and then returns a list that contains
-  a summary of the attributes of each segment
-Depends: R (>= 3.1.2)
-License:GPL-3
+Description: This package contains functions that enhance the L1 regularised
+    piecewise linear trend package l1tf.  The main function fits the model on a
+    given vector and then returns a list that contains a summary of the
+    attributes of each segment
+Depends:
+    R (>= 3.1.2)
+License: GPL-3
 LazyData: true
-Imports: 
+Imports:
     l1tf,
-    zoo
-
+    zoo,
+    ggplot2

@@ -5,7 +5,6 @@
 #'@param object An object of class l1tf_obj
 #'
 #'@export
-
 setMethod("summary",
           signature(object = "l1tf_obj"),
           function (object, ...)
@@ -14,19 +13,25 @@ setMethod("summary",
           }
 )
 
-#'A ggplot2 method for the l1tf output
+
+#'A plot method for the l1tf output
 #'
-#'\code{ggplot} returns a ggplot of the l1tf output
+#'\code{plot} returns a plot of the l1tf output
+#'
+#'@param x An object of class l1tf_obj
 #'
 #'@export
-
-setMethod("ggplot",
-          signature(data = "l1tf_obj"),
-          function (data, ...)
+setMethod("plot", signature(x = "l1tf_obj",y = "missing"),
+          function (x, y, ...) 
           {
-            ggplot(data@series.df)+
-              geom_point(aes(x = index, y = y.proc))+
-              geom_point(aes(x = index, y = trend))+
-              geom_vline(xintercept=unique(data@summary.df$start)[-1],linetype=2,colour="blue")
+            plot(slot(x,"series.df")$index,slot(x, "series.df")$trend,type="l",xlab="Index",ylab="pre-processed Y")
+            
+            points(slot(x,"series.df")$index,slot(x, "series.df")$y.proc,type="p")
+            
+            abline(v=slot(x,"summary.df")$start[-1],lty=2,col=4)
+            
           }
 )
+
+
+
