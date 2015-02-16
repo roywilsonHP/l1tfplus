@@ -1,4 +1,4 @@
-Package: l1tfFns
+Package: l1tfplus
 Title: Fits piecewise polynomial trend based on L1 regularisation and extracts
     features
 Version: 0.1
