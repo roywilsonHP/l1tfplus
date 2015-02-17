@@ -1,5 +1,5 @@
 Package: l1tfplus
-Title: Fits piecewise polynomial trend based on L1 regularisation and extracts
+Title: Fits piecewise linear trend based on L1 regularisation and extracts
     features
 Version: 0.1
 Authors@R: person("Roy","Wilson",email="roy.wilson@hp.com",role=c("aut","cre"))
