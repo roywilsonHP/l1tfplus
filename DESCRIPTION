@@ -13,5 +13,4 @@ License: GPL-3
 LazyData: true
 Imports:
     l1tf,
-    zoo,
-    ggplot2
+    zoo

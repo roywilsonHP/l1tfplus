@@ -17,6 +17,10 @@
 #'@param max.length the maximum allowable segment length, defaults to 5
 #'@param max.prop.na the maximum allowable proportion of NAs within the input vector
 #'
+#'@importFrom zoo na.locf
+#'@importFrom zoo na.approx
+#'@importFrom l1tf l1tf
+#'
 #'
 #'@return An l1tf_obj with slots summary.df, series.df and prop.na
 #'
