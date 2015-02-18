@@ -58,7 +58,7 @@ l1trend <- function(y.v,prop,sens=100,max.length=5,max.prop.na = 0.2){
 
   #create difference vector and find change points
   diff2.v <- c(0,diff(dat.m[,2]))
-
+  
   #Find change-points
   quartiles <-
     quantile(diff2.v,probs=c(0.25,0.5,0.75))
