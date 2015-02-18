@@ -16,10 +16,12 @@ library(l1tfplus)
 #Package testing-----------------------------------------------------------------------
 
 data(somestocks)
-data.sub <- somestocks[,4]
-trend.est <- l1trend(y.v = data.sub,prop=0.2,sens=100,max.length=5,max.prop.na=0.2)
+data.sub <- somestocks[,10]
+trend.est <- l1trend(y.v = data.sub,prop=0.03,sens=100,max.length=5,max.prop.na=0.2)
 summary(trend.est)
 plot(trend.est)
+
+
 
 
 #A potential ggplot2 method for the l1tf output----------------------------------------------------------------
