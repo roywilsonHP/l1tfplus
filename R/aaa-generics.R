@@ -24,7 +24,10 @@ setMethod("summary",
 setMethod("plot", signature(x = "l1tf_obj",y = "missing"),
           function (x, y, ...) 
           {
-            plot(slot(x,"series.df")$index,slot(x, "series.df")$trend,type="l",xlab="Index",ylab="pre-processed Y")
+            plot(slot(x,"series.df")$index,slot(x, "series.df")$trend,type="l",
+                 xlab="Index",ylab="pre-processed Y",
+                 ylim=c(min(slot(x,"series.df")$y.proc.v)-0.05*(range(slot(x,"series.df")$y.proc.v)[2]-range(slot(x,"series.df")$y.proc.v)[1]),
+                        max(slot(x,"series.df")$y.proc.v)+0.05*(range(slot(x,"series.df")$y.proc.v)[2]-range(slot(x,"series.df")$y.proc.v)[1]))
             
             points(slot(x,"series.df")$index,slot(x, "series.df")$y.proc,type="p")
             
